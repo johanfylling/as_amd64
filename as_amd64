@@ -1,0 +1,13 @@
+#!/bin/sh
+
+docker run \
+    -ti \
+    --rm \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v $(pwd):$(pwd) \
+    -w $(pwd) \
+    --platform "linux/amd64" \
+    --name amd64 \
+    -p 8181:8181 \
+    amd64:v1 \
+    bash
